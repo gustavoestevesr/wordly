@@ -30,7 +30,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'game',
+    path: 'game/:qtdLetters',
     title: 'Game',
     loadComponent: () =>
       import('./pages/game/game.component').then((c) => c.GameComponent),
