@@ -1,1 +1,24 @@
-<p>daily-word works!</p>
+<div
+  class="container flex flex-col justify-center items-center bg-slate-100 min-h-full px-5"
+>
+  <div class="container max-w-screen-lg">
+    <div class="container flex flex-row justify-center items-center gap-10">
+      <button class="select-length-word" mat-raised-button (click)="qtdLetters=4">4 letras</button>
+      <button class="select-length-word" mat-raised-button (click)="qtdLetters=5">5 letras</button>
+      <button class="select-length-word" mat-raised-button (click)="qtdLetters=6">6 letras</button>
+    </div>
+
+    <br class="my-10"/>
+
+    <div class="container flex flex-row justify-center items-center">
+      <!-- PLAY GAME BUTTON -->
+      <button
+        class="play-game-button"
+        mat-raised-button
+        (click)="router.navigate(['game', qtdLetters])"
+      >
+        Play Game
+      </button>
+    </div>
+  </div>
+</div>
