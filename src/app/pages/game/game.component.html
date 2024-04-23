@@ -1,1 +1,44 @@
-<p>game works!</p>
+<div
+  class="container flex flex-col justify-center items-center bg-slate-100 min-h-full px-5"
+>
+  <div class="container max-w-screen-xl">
+    <!-- GRID -->
+    <div class="container flex flex-row justify-center items-center gap-2">
+      <!-- ROWS -->
+      <div *ngFor="let row of grid; let i = index">
+        <!-- COLS -->
+        <div class="my-2" *ngFor="let col of row; let j = index">
+          <button class="letter-slot" mat-raised-button>
+            {{ grid[i][j] }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <!-- SUBMIT BUTTON -->
+    <div class="container flex flex-row justify-center items-center">
+      <button class="submit-button" mat-raised-button (click)="verifyWord()">
+        Submit
+      </button>
+    </div>
+
+    <br />
+
+    <!-- KEYBOARD -->
+    <div
+      class="container flex flex-row flex-wrap justify-center items-center gap-2"
+    >
+      <div class="my-2" *ngFor="let letter of keyboard">
+        <button
+          class="letter-slot"
+          mat-raised-button
+          (click)="addLetter(letter)"
+        >
+          {{ letter }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
